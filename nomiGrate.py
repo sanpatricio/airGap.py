@@ -26,6 +26,10 @@ def writeOut(results):
 
 
 def copyFiles(results,dest):
+	""" Copy files from original location to sequestered directory for further examination
+	In: Dictionary with file hits
+	Out: Finished notification after either a successful series of file copies or an error
+	"""
 	if not os.path.exists(dest) or not os.path.isdir(dest):
 		os.mkdir(dest)
 
