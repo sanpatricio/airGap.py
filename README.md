@@ -6,7 +6,8 @@ nomiGrate assists you with nominating for migration (get it?) files that may be 
 
 Example session:
 
-~~~~me@handoftheking $ ./nomiGrate.py 
+```
+me@handoftheking $ ./nomiGrate.py 
 In which directory do I begin my search: ./testing
 How many days back am I looking: 1
 Searching for files modified since 2016-09-29 21:04:48.908844
@@ -17,4 +18,5 @@ Actions:
 [3] Write these results to ./20160930-210448-nomiGrate-Report.txt
 [4] Write these results to the screen
 What should I do with them [1]: 4
-2016-09-30 19:30:./testing/file.txt~~~~
+2016-09-30 19:30:./testing/file.txt
+```
