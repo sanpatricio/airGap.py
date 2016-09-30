@@ -14,7 +14,7 @@ Searching for files modified since 2016-09-29 21:04:48.908844
 Found 1 modified files in the last 1 day(s).
 Actions:
 [1] Nothing, return to command line.
-[2] Collect copies of his in ./20160930-210448-nominatedForMigration/
+[2] Collect copies of hits in ./20160930-210448-nominatedForMigration/
 [3] Write these results to ./20160930-210448-nomiGrate-Report.txt
 [4] Write these results to the screen
 What should I do with them [1]: 4
