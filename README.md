@@ -24,3 +24,6 @@ What should I do with them [1]: 4
 
 ## Installation
 Simply drop nomiGrate.py into any directory to which you have write access, ensure it is executable, and verify the first line of the script points to your local copy of Python (/usr/bin/python).  Python 2.7 was used to write nomiGrate.
+
+## To-Do
+1. Arrange for input gathered through the step-by-step to also be passed via command line argument for possible cron-ination.
