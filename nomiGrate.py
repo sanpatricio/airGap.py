@@ -10,10 +10,14 @@ now       = dt.datetime.now()
 searchDir = raw_input("In which directory do I begin my search: ")
 ago       = input("How many days back am I looking: ")
 shellAgo  = now-dt.timedelta(days=ago)
-exclude   = set([".git"])
+exclude   = set([".git",".svn"])
 hits      = {}
 
 def writeOut(results):
+	""" Grind through the results dictionary.
+	In: Dictionary with file hits
+	Out: A read-for-print string with one entry per line
+	"""
 	out = ""
 	for key in sorted(results):
 		out += results[key] + ":" + str(key) + str("\n")
