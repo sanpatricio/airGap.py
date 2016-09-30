@@ -35,7 +35,7 @@ def copyFiles(results,dest):
 	return "...finished"
 
 
-print "Seaerching for files modified since " + str(shellAgo)
+print "Searching for files modified since " + str(shellAgo)
 
 for root,dirs,files, in os.walk(searchDir):
 	dirs[:] = [d for d in dirs if d not in exclude]
@@ -55,7 +55,7 @@ if len(hits) != 0:
 	print "Found " + str(len(hits)) + " modified files in the last " + str(ago) + " day(s)."
 	print "Actions:"
 	print "[1] Nothing, return to command line."
-	print "[2] Collect copies of his in ./" + directory + "/"
+	print "[2] Collect copies of hits in ./" + directory + "/"
 	print "[3] Write these results to ./" + report
 	print "[4] Write these results to the screen"
 
