@@ -7,7 +7,7 @@ nomiGrate is a Python script that assists you with nominating for migration (get
 
 Example session:
 
-```bash
+```
 me@handoftheking $ ./nomiGrate.py 
 In which directory do I begin my search: ./testing
 How many days back am I looking: 1
