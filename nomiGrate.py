@@ -38,12 +38,12 @@ def copyFiles(results,dest):
 		try:
 			copyfile(key, dest+"/"+os.path.basename(key))
 		except StandardError as errStr:
-			print "Error: Couldn't copy " + str(key) + "; system feedback: " + str(errStr)
+			print "[Error] Couldn't copy " + str(key) + ": " + str(errStr)
 
 	return "...finished"
 
 
-print "Searching for files modified since " + str(shellAgo)
+print "Searching for files modified since " + str(shellAgo.strftime('%Y-%m-%d'))
 
 for root,dirs,files, in os.walk(searchDir):
 	dirs[:] = [d for d in dirs if d not in exclude]
