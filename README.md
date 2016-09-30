@@ -3,11 +3,11 @@
 
 By Patrick Riggs (github: sanpatricio)
 
-nomiGrate is a Python scrit that assists you with nominating for migration (get it?) files that may be ready for copying between two air-gapped systems or networks.  It recursively looks through a directory for files modified within N days ago, then offers a couple ways to proceed with the results: display on screen, write to log file, or copy identified files to a directory
+nomiGrate is a Python script that assists you with nominating for migration (get it?) files that may be ready for copying between two air-gapped systems or networks.  It recursively looks through a directory for files modified within N days ago, then offers a couple ways to proceed with the results: display on screen, write to log file, or copy identified files to a directory
 
 Example session:
 
-```
+```bash
 me@handoftheking $ ./nomiGrate.py 
 In which directory do I begin my search: ./testing
 How many days back am I looking: 1
