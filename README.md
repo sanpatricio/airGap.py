@@ -1,8 +1,9 @@
-# nomiGrate
-## version 0.9
+# nomiGrate.py
+### version 0.9
+
 By Patrick Riggs (github: sanpatricio)
 
-nomiGrate assists you with nominating for migration (get it?) files that may be ready for copying between two air-gapped systems or networks by recursively looking through a directory for files modified within N days ago, then offering a couple ways to proceed with the list of nomiGrated files (display on screen, write to log file, copy itentified files to a directory)
+nomiGrate is a Python scrit that assists you with nominating for migration (get it?) files that may be ready for copying between two air-gapped systems or networks.  It recursively looks through a directory for files modified within N days ago, then offers a couple ways to proceed with the results: display on screen, write to log file, or copy identified files to a directory
 
 Example session:
 
@@ -20,3 +21,6 @@ Actions:
 What should I do with them [1]: 4
 2016-09-30 19:30:./testing/file.txt
 ```
+
+## Installation
+Simply drop nomiGrate.py into any directory to which you have write access, ensure it is executable, and verify the first line of the script points to your local copy of Python (/usr/bin/python).  Python 2.7 was used to write nomiGrate.
