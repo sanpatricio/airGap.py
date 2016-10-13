@@ -12,6 +12,9 @@ ago       = input("How many days back am I looking: ")
 shellAgo  = now-dt.timedelta(days=ago)
 exclude   = set([".git",".svn"])
 hits      = {}
+fileExts  = {}
+fileCount = 0
+images    = []
 
 def writeOut(results):
 	""" Grind through the results dictionary.
@@ -43,17 +46,29 @@ def copyFiles(results,dest):
 	return "...finished"
 
 
-print "Searching for files modified since " + str(shellAgo.strftime('%Y-%m-%d'))
-
 for root,dirs,files, in os.walk(searchDir):
 	dirs[:] = [d for d in dirs if d not in exclude]
 	for fname in files:
-		path = os.path.join(root,fname)
-		st = os.stat(path)
+		fileCount += 1
+		sys.stdout.write("Searching for files modified since " + str(shellAgo) + " [" + str(fileCount) + "]\r")
+		sys.stdout.flush()
+		if root.endswith("/"):
+			fullPath, ext = os.path.splitext(root + fname)
+		else:
+			fullPath, ext = os.path.splitext(root + "/" + fname)
+		st = os.stat(fullPath + ext)
+
 		mtime = dt.datetime.fromtimestamp(st.st_mtime)
 		if mtime > shellAgo:
-			hits[path] = mtime.strftime('%Y-%m-%d %H:%M')
+			hits[fullPath + ext] = mtime.strftime('%Y-%m-%d %H:%M')
+			if ext in fileExts:
+				fileExts[ext] += 1
+			else:
+				fileExts[ext] = 1
+			if ext in (".jpg",".png",".bmp",".gif"):
+				images.append(fullPath + ext)
 
+print "Searching for files modified since " + str(shellAgo.strftime('%Y-%m-%d'))
 
 if len(hits) != 0:
 	stamp = now.strftime('%Y%m%d-%H%M%S-')
@@ -61,6 +76,12 @@ if len(hits) != 0:
 	directory = stamp + "nominatedForMigration"
 
 	print "Found " + str(len(hits)) + " modified files in the last " + str(ago) + " day(s)."
+
+	if len(fileExts) != 0:
+		print "File extensions found:"
+		for ext, count in fileExts.iteritems():
+			print "- " + ext + " [" + str(count) + "]"
+
 	print "Actions:"
 	print "[1] Nothing, return to command line."
 	print "[2] Collect copies of hits in ./" + directory + "/"
